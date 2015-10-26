@@ -32,7 +32,7 @@ public class ClienteDAO {
         Criteria cri = sessao.createCriteria(Cliente.class);
         this.list = cri.list();
         return list;
-        
+       
     }
     
     

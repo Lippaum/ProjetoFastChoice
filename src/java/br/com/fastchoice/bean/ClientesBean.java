@@ -40,7 +40,7 @@ public class ClientesBean {
        cliente.setEmail(null);
        cliente.setSenha(null);
        cliente.setConfSenha(null);
-        return "index";
+        return "cadastro";
     }
 
      public String removerCliente (Cliente c){
@@ -50,7 +50,7 @@ public class ClientesBean {
        this.cliente.setEmail("");
        this.cliente.setSenha("");
        this.cliente.setConfSenha("");
-       return "index";
+       return "cadastro";
     }
      
     /**
@@ -65,7 +65,7 @@ public class ClientesBean {
          cliente.setEmail(null);
          cliente.setSenha(null);
          cliente.setConfSenha(null);
-         return "index";
+         return "cadastro";
      }
      
      public String carregarCliente(Cliente c){
