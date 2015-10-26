@@ -20,7 +20,7 @@ public class EstabelecimentoDAO {
 
     Session sessao;
     Transaction trans;
-    List <Estabelecimento> list;
+    List<Estabelecimento> list;
 
     /**
      *
@@ -32,12 +32,8 @@ public class EstabelecimentoDAO {
         Criteria cri = sessao.createCriteria(Estabelecimento.class);
         this.list = cri.list();
         return list;
-       
+
     }
-    
-    
-    
-    
 
     public void adicionarEstabelecimento(Estabelecimento es) {
         try {
@@ -45,10 +41,11 @@ public class EstabelecimentoDAO {
             trans = sessao.beginTransaction();
 
             Estabelecimento estabelecimento = new Estabelecimento();
-            estabelecimento.setUsuario(c.getUsuario());
-            estabelecimento.setEmail(c.getEmail());
-            estabelecimento.setSenha(c.getSenha());
-            estabelecimento.setConfSenha(c.getConfSenha());
+            estabelecimento.setNome(es.getNome());
+            estabelecimento.setCnpj(es.getCnpj());
+            estabelecimento.setCidade(es.getCidade());
+            estabelecimento.setBairro(es.getBairro());
+            estabelecimento.setRua(es.getRua());
 
             sessao.save(estabelecimento);
             trans.commit();
@@ -74,8 +71,8 @@ public class EstabelecimentoDAO {
         }
 
     }
-    
-     public void editarEstabelecimento(Estabelecimento es) {
+
+    public void editarEstabelecimento(Estabelecimento es) {
 
         try {
             sessao = HibernateUtil.getSessionFactory().openSession();

@@ -9,5 +9,6 @@
     <property name="hibernate.connection.password">admin</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping class="br.com.fastchoice.entity.Cliente"/>
+    <mapping class="br.com.fastchoice.entity.Estabelecimento"/>
   </session-factory>
 </hibernate-configuration>

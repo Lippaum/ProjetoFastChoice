@@ -36,21 +36,21 @@ public class EstabelecimentosBean {
     
     public String adicionarEstabelecimento (){
        estabelecimentoDao.adicionarEstabelecimento(estabelecimento);
-       estabelecimento.setUsuario(null);
-       estabelecimento.setEmail(null);
-       estabelecimento.setSenha(null);
-       estabelecimento.setConfSenha(null);
-        return "cadastroUsuario";
+       estabelecimento.setNome(null);
+       estabelecimento.setBairro(null);
+       estabelecimento.setCidade(null);
+       estabelecimento.setCnpj(null);
+        return "cadastroEstabelecimento";
     }
 
      public String removerEstabelecimento (Estabelecimento es){
        this.estabelecimento = es;
        estabelecimentoDao.removerEstabelecimento(this.estabelecimento);
-       this.estabelecimento.setUsuario("");
-       this.estabelecimento.setEmail("");
-       this.estabelecimento.setSenha("");
-       this.estabelecimento.setConfSenha("");
-       return "cadastroUsuario";
+       this.estabelecimento.setBairro("");
+       this.estabelecimento.setCidade("");
+       this.estabelecimento.setCnpj("");
+       this.estabelecimento.setNome("");
+       return "cadastroEstabelecimento";
     }
      
     /**
@@ -61,11 +61,11 @@ public class EstabelecimentosBean {
     
      public String atualizarEstabelecimento(){
          estabelecimentoDao.editarEstabelecimento(estabelecimento);
-         estabelecimento.setUsuario(null);
-         estabelecimento.setEmail(null);
-         estabelecimento.setSenha(null);
-         estabelecimento.setConfSenha(null);
-         return "cadastroUsuario";
+         estabelecimento.setNome(null);
+         estabelecimento.setBairro(null);
+         estabelecimento.setCidade(null);
+         estabelecimento.setCnpj(null);
+         return "cadastroEstabelecimento";
      }
      
      public String carregarEstabelecimento(Estabelecimento es){
