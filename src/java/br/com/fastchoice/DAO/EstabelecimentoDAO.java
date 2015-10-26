@@ -5,7 +5,7 @@
  */
 package br.com.fastchoice.DAO;
 
-import br.com.fastchoice.entity.Cliente;
+import br.com.fastchoice.entity.Estabelecimento;
 import br.com.fastchoice.util.HibernateUtil;
 import java.util.List;
 import org.hibernate.Criteria;
@@ -16,20 +16,20 @@ import org.hibernate.Transaction;
  *
  * @author David
  */
-public class ClienteDAO {
+public class EstabelecimentoDAO {
 
     Session sessao;
     Transaction trans;
-    List <Cliente> list;
+    List <Estabelecimento> list;
 
     /**
      *
      * @return
      */
-    public List<Cliente> getList() {
+    public List<Estabelecimento> getList() {
         sessao = HibernateUtil.getSessionFactory().openSession();
         trans = sessao.beginTransaction();
-        Criteria cri = sessao.createCriteria(Cliente.class);
+        Criteria cri = sessao.createCriteria(Estabelecimento.class);
         this.list = cri.list();
         return list;
        
@@ -39,18 +39,18 @@ public class ClienteDAO {
     
     
 
-    public void adicionarCliente(Cliente c) {
+    public void adicionarEstabelecimento(Estabelecimento es) {
         try {
             sessao = HibernateUtil.getSessionFactory().openSession();
             trans = sessao.beginTransaction();
 
-            Cliente cliente = new Cliente();
-            cliente.setUsuario(c.getUsuario());
-            cliente.setEmail(c.getEmail());
-            cliente.setSenha(c.getSenha());
-            cliente.setConfSenha(c.getConfSenha());
+            Estabelecimento estabelecimento = new Estabelecimento();
+            estabelecimento.setUsuario(c.getUsuario());
+            estabelecimento.setEmail(c.getEmail());
+            estabelecimento.setSenha(c.getSenha());
+            estabelecimento.setConfSenha(c.getConfSenha());
 
-            sessao.save(cliente);
+            sessao.save(estabelecimento);
             trans.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,13 +59,13 @@ public class ClienteDAO {
         }
     }
 
-    public void removerCliente(Cliente c) {
+    public void removerEstabelecimento(Estabelecimento es) {
 
         try {
             sessao = HibernateUtil.getSessionFactory().openSession();
             trans = sessao.beginTransaction();
 
-            sessao.delete(c);
+            sessao.delete(es);
             trans.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -75,13 +75,13 @@ public class ClienteDAO {
 
     }
     
-     public void editarCliente(Cliente c) {
+     public void editarEstabelecimento(Estabelecimento es) {
 
         try {
             sessao = HibernateUtil.getSessionFactory().openSession();
             trans = sessao.beginTransaction();
 
-            sessao.update(c);
+            sessao.update(es);
             trans.commit();
         } catch (Exception e) {
             e.printStackTrace();

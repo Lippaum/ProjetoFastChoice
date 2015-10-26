@@ -10,17 +10,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "clientes")
-  public class Cliente implements Serializable{
-    
+@Table(name = "estabelecimentos")
+public class Estabelecimento implements Serializable {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)        
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Integer id;
     @Column
-       String usuario;
-       String email;
-       String senha;
-       String confSenha;
+    String nome;
+    String email;
+    String senha;
+    String confSenha;
 
     public Integer getId() {
         return id;
@@ -77,12 +77,11 @@ import javax.persistence.Table;
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Cliente other = (Cliente) obj;
+        final Estabelecimento other = (Estabelecimento) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;
     }
 
-   
 }
