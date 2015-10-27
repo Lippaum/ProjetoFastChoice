@@ -22,6 +22,9 @@ public class Estabelecimento implements Serializable {
     String cidade;
     String bairro;
     String rua;
+    String numero;
+    String telefone;
+  
 
     public String getNome() {
         return nome;
@@ -78,8 +81,7 @@ public class Estabelecimento implements Serializable {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    String numero;
-    String telefone;
+    
 
     public Integer getId() {
         return id;

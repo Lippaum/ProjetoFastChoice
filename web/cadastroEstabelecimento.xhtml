@@ -17,6 +17,8 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
     </head>
     <body>
+        <div class="row" > 
+                <div class="col-md-4">
         <h:form class="center-block">
             <fieldset>
                 <!--  Form Name -->
@@ -26,25 +28,39 @@
 
                 <!--  Text input -->
                 <div class="form-group">
-                    <h4>Usuário</h4> <h:inputText id="nome" 
+                    <h4>Nome do estabelecimento:</h4> <h:inputText id="nome" 
                                                   class="form-control" value="#{estabelecimentosBean.estabelecimento.nome}"  />
                 </div>
                 <!--  Text input -->
+                 <div class="form-group">
+                    <h4>CNPJ:</h4> <h:inputText id="cnpj" 
+                                                  class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.cnpj}"  />
+                </div>
+                
                 <div class="form-group">
-                    <h4>Email:</h4> <h:inputText id="email" 
-                                                 class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.bairro}"  />
+                    <h4>Cidade:</h4> <h:inputText id="cidade" 
+                                                  class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.cidade}"  />
                 </div>
              
                 <!--  Password input -->
                 <div class="form-group">
-                    <h4>Senha:</h4> <h:inputSecret id="senha" 
-                                                   class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.cidade}"  />
+                    <h4>Bairro:</h4> <h:inputText id="bairro" 
+                                                    class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.bairro}"  />
                 </div>
                 
                 <!--  Password input -->
                 <div class="form-group">
-                    <h4>Confirmação de senha:</h4> <h:inputSecret id="confSenha" 
-                                                                  class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.cnpj}"  />
+                    <h4>Rua:</h4> <h:inputText id="rua" 
+                                                                  class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.rua}"  />
+                </div>
+                
+                <div class="form-group">
+                    <h4>Numero:</h4> <h:inputText id="numero" 
+                                                 class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.numero}"  />
+                </div>
+                <div class="form-group">
+                    <h4>Telefone:</h4> <h:inputText id="telefone" 
+                                                 class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.telefone}"  />
                 </div>
                
              <h:panelGrid columns="2">
@@ -58,33 +74,67 @@
                         <f:facet name="header">
                             ID
                         </f:facet>
+                        <h:outputText value="#{tabela.id}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Nome do estabelecimento
+                        </f:facet>
                         <h:outputText value="#{tabela.nome}" />
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            USUÁRIO
+                            CNPJ
                         </f:facet>
                         <h:outputText value="#{tabela.cnpj}" />
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            EMAIL
+                            Cidade
+                        </f:facet>
+                        <h:outputText value="#{tabela.cidade}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Bairro
                         </f:facet>
                         <h:outputText value="#{tabela.bairro}" />
                     </h:column>
                     <h:column>
                         <f:facet name="header">
+                            Rua
+                        </f:facet>
+                        <h:outputText value="#{tabela.rua}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Número
+                        </f:facet>
+                        <h:outputText value="#{tabela.numero}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Telefone
+                        </f:facet>
+                        <h:outputText value="#{tabela.telefone}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
                             AÇÕES
                         </f:facet>
-                        <h:commandLink value="Remover //" action="#{clientesBean.removerCliente(tabela)}"/>
-                        <h:commandLink value=" Editar" action="#{clientesBean.carregarCliente(tabela)}"/>
+                        <h:commandLink value="Remover //" action="#{estabelecimentosBean.removerEstabelecimento
+                                                                    (tabela)}"/>
+                        <h:commandLink value=" Editar" action="#{estabelecimentosBean.carregarEstabelecimento
+                                                                 (tabela)}"/>
 
                     </h:column>
                 </h:dataTable>
-
+                
             </fieldset>
+                
         </h:form>
-
+            </div>
+        </div>
 
         <script src="http://code.jquery.com/jquery.js"
         type="text/javascript"></script> <script>

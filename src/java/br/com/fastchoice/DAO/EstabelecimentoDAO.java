@@ -22,10 +22,6 @@ public class EstabelecimentoDAO {
     Transaction trans;
     List<Estabelecimento> list;
 
-    /**
-     *
-     * @return
-     */
     public List<Estabelecimento> getList() {
         sessao = HibernateUtil.getSessionFactory().openSession();
         trans = sessao.beginTransaction();
@@ -41,12 +37,14 @@ public class EstabelecimentoDAO {
             trans = sessao.beginTransaction();
 
             Estabelecimento estabelecimento = new Estabelecimento();
-            estabelecimento.setNome(es.getNome());
             estabelecimento.setCnpj(es.getCnpj());
+            estabelecimento.setNome(es.getNome());
+
             estabelecimento.setCidade(es.getCidade());
             estabelecimento.setBairro(es.getBairro());
             estabelecimento.setRua(es.getRua());
-
+            estabelecimento.setNumero(es.getNumero());
+            estabelecimento.setTelefone(es.getTelefone());
             sessao.save(estabelecimento);
             trans.commit();
         } catch (Exception e) {

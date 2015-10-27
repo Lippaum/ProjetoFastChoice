@@ -11,11 +11,7 @@ import java.util.List;
 import java.util.Objects;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
-/**
- *
- * @author David
- */
+    
 @ManagedBean
 @SessionScoped
 public class EstabelecimentosBean {
@@ -40,6 +36,8 @@ public class EstabelecimentosBean {
        estabelecimento.setBairro(null);
        estabelecimento.setCidade(null);
        estabelecimento.setCnpj(null);
+       estabelecimento.setRua(null);
+       estabelecimento.setTelefone(null);
         return "cadastroEstabelecimento";
     }
 
@@ -50,6 +48,8 @@ public class EstabelecimentosBean {
        this.estabelecimento.setCidade("");
        this.estabelecimento.setCnpj("");
        this.estabelecimento.setNome("");
+       this.estabelecimento.setRua("");
+       this.estabelecimento.setNumero("");
        return "cadastroEstabelecimento";
     }
      
@@ -65,12 +65,14 @@ public class EstabelecimentosBean {
          estabelecimento.setBairro(null);
          estabelecimento.setCidade(null);
          estabelecimento.setCnpj(null);
+         estabelecimento.setRua(null);
+         estabelecimento.setTelefone(null);
          return "cadastroEstabelecimento";
      }
      
      public String carregarEstabelecimento(Estabelecimento es){
         this.estabelecimento = es;
-         return "editarUsuario";
+         return "editarEstabelecimento";
          
         }
      
